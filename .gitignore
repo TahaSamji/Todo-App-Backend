@@ -1,0 +1,17 @@
+# Node.js / JavaScript
+/node_modules/         # NPM dependencies
+/dist/                 # Build output
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE-specific
+.idea/                # JetBrains IDE
+.vscode/              # VS Code settings
+
+# Environment files
+.env                  # Local environment variables
+.env.local
+.env.development
+.env.test
+.env.production
