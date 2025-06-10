@@ -5,4 +5,12 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
-module.exports = pool;
+async function initializeDB() {
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS todos (
+      id SERIAL PRIMARY KEY,
+      task TEXT NOT NULL
+    )
+  `);
+}
+module.exports = { pool, initializeDB };

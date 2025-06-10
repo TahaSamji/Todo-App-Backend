@@ -1,5 +1,7 @@
 const pool = require("./db");
 
+
+
 exports.getTodos = async (req, res) => {
   const result = await pool.query("SELECT * FROM todos");
   res.json(result.rows);

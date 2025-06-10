@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const { initializeDB } = require("./db");
 require("dotenv").config();
 
 const app = express();
@@ -12,6 +13,11 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(express.json());
+
+initializeDB().then(() => {
+  console.log("Database initialized");
+});
+
 
 app.use("/api/todos", require("./todoRoute"));
 

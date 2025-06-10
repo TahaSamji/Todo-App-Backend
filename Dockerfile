@@ -54,4 +54,4 @@ EXPOSE $PORT
 #   CMD node healthcheck.js || exit 1
 
 # Start the application
-CMD ["node", "index.js"]
+CMD ["node", "server.js"]
